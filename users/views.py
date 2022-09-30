@@ -6,3 +6,7 @@ import users
 
 def login_page(request):
     return render(request, 'login_page.html')
+
+
+def make_user(request):
+    return render(request, 'make_user.html')

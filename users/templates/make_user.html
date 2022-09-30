@@ -26,29 +26,30 @@
             font-family: 'Gowun Dodum', sans-serif;
         }
 
-        .project_name {
-
-            margin: 100px;
-            height: 400px;
-            
+        .welcome {
+            width: 100%;
+            height: 200px;
 
             background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcrKYSP%2FbtrNs3uwYh3%2FWkoTcfCdIzeTKPqtsIveT1%2Fimg.jpg');
 
-            background-repeat: no-repeat;
-            background-position: center center;
-
-            background-size: auto;
+            background-position: center;
+            background-size: cover;
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
         }
+
+
+        .welcome_msg{
+            margin-top: 60px;
+        }
+
 
         .idpwd_input {
             margin: 100px;
-            height: 400px;
+            height: 600px;
 
             display: flex;
             justify-content: center;
@@ -69,16 +70,9 @@
             border-radius: 5px;
         }
 
-        #login {
-            width: 18%;
-            background-color: rgb(93, 185, 222);
-            border-color: transparent;
-            color: white;
-        }
-
         #create_user {
-            width: 18%;
-            background-color: rgb(31, 143, 188);
+            width: 22%;
+            background-color: palevioletred;
             border-color: transparent;
             color: white;
         }
@@ -91,10 +85,42 @@
             border-radius: 3px;
         }
 
-
         #alert {
             border-color: transparent;
         }
+
+
+        .back_login_btn {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin-left: 2000px;
+
+            width: 100%;
+
+            color: darkslateblue;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back_login_btn > button {
+            width: 200px;
+            height: 50px;
+
+            background-color: rgb(128, 116, 201);
+            color: white;
+
+            border-radius: 50px;
+            border: 1px solid palevioletred;
+
+            margin-top: 10px;
+        }
+
+        .back_login_btn > button:hover {
+            border: 2px solid white;
+        }
+
 
 
 
@@ -103,22 +129,44 @@
 </head>
 
 <body>
-    <div class="login_page"></div>
+    <div class="make_user"></div>
     
-    <div class="project_name">
-        <h1 style="color:white;"> FEELSNS </h1>
+    <div class="welcome">
+        <div class="welcome_msg">
+            <h1 style="color:white;"> 회원가입 </h1>
+        </div>
+        
+        <div class="back_login_btn">
+            <button> Login</button>
+        </div>
     </div>
+
 
     <div class="idpwd_input" >
         <div class="container">
+            <h5>ID</h5>
             <input type="text" placeholder="ID" id="id" class="account">
-            <input type="password" placeholder="Password" id="password" class="account">
-            <br />
-            <button id="login" class="account">login</button>
-            <button id="create_user" class="account">Make Account</button>
+            <hr />
+
+            <h5>Password</h5>
+            <input type="password_1" placeholder="Password" id="password_1" class="account">
+            <hr />
+
+            <h5>Password 재확인</h5>
+            <input type="password_1" placeholder="Password" id="password_1" class="account">
+            <hr />
+
+            <h5>닉네임</h5>
+            <input type="text" placeholder="Nickname" id="nickname" class="account">
+            <hr />
+
+            <button id="create_user" class="account">회원가입</button>
             <p id="alert" class="account"> </p>
         </div>
     </div>
+
+
+    
 
 
 </body>
