@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <title>Login Page</title>
+
+    
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .project_name {
+
+            margin: 100px;
+            height: 400px;
+            
+
+            /* background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), blueviolet); */
+            background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcrKYSP%2FbtrNs3uwYh3%2FWkoTcfCdIzeTKPqtsIveT1%2Fimg.jpg');
+
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            background-size: auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .idpwd_input {
+            margin: 100px;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid palevioletred;
+            border-radius: 5px;
+        }
+
+        .container{
+            margin: 100px;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        #login {
+            width: 18%;
+            background-color: skyblue;
+            border-color: transparent;
+            color: white;
+        }
+
+        #create_user {
+            width: 18%;
+            background-color: skyblue;
+            border-color: transparent;
+            color: white;
+        }
+
+        .account {
+            display: block;
+            margin-bottom: 3px;
+            padding: 3px;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+        }
+
+        #alert {
+            border-color: transparent;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="login_page"></div>
+    
+    <div class="project_name">
+        <h1 style="color:white;"> FEELSNS </h1>
+    </div>
+
+    <div class="idpwd_input" >
+        <div class="container">
+            <input type="text" placeholder="ID" id="id" class="account">
+            <input type="password" placeholder="Password" id="password" class="account">
+            <br />
+            <button id="login" class="account">login</button>
+            <button id="create_user" class="account">Make Account</button>
+            <p id="alert" class="account"> </p>
+        </div>
+    </div>
+
+
+</body>
+</html>
