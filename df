@@ -1,0 +1,57 @@
+[33mcommit 965a2d9255c3fa55fea2cb3f0434e71efa702c32[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: leehyewon <tnddl2345@gmail.com>
+Date:   Tue Oct 4 15:54:59 2022 +0900
+
+    2_team_project
+
+[33mcommit 4ef047723d5a14de23df06a69e4a2b58d637799c[m
+Author: leehyewon <tnddl2345@gmail.com>
+Date:   Tue Oct 4 10:51:14 2022 +0900
+
+    2_team_project
+
+[33mcommit a006e470b717e7654d258d521b15a86c4e4f401b[m
+Merge: af66db6 66acedf
+Author: LEE HYEWON <113076205+wonprogrammer@users.noreply.github.com>
+Date:   Fri Sep 30 19:55:09 2022 +0900
+
+    Merge pull request #1 from rippliny/dong
+    
+    "models update"
+
+[33mcommit 66acedf912227829a73fcb043de7dc6aa6c670a7[m[33m ([m[1;31morigin/dong[m[33m, [m[1;32mdong[m[33m)[m
+Merge: 533872f 765f915
+Author: dong <rippliny@naver.com>
+Date:   Fri Sep 30 19:44:43 2022 +0900
+
+    models update
+
+[33mcommit 533872f63201c6c51cd1cba5df54bdafc289c6d0[m
+Author: dong <rippliny@naver.com>
+Date:   Fri Sep 30 19:36:07 2022 +0900
+
+    models.py update
+
+[33mcommit af66db62d46c62a9b188df28ec7401636182f5b4[m
+Author: leehyewon <tnddl2345@gmail.com>
+Date:   Fri Sep 30 17:49:01 2022 +0900
+
+    2_team_project
+
+[33mcommit fef93e82e19cafefaf596eeae37a60695ebd1151[m
+Author: leehyewon <tnddl2345@gmail.com>
+Date:   Fri Sep 30 17:11:36 2022 +0900
+
+    2_team_project
+
+[33mcommit 765f915b58a2823fe34fdf9c01b94cebbff165a5[m
+Author: dong <rippliy@naver.com>
+Date:   Fri Sep 30 16:27:10 2022 +0900
+
+    test
+
+[33mcommit 088322a51eb89172c54fe6dd393f29236aa62945[m
+Author: leehyewon <tnddl2345@gmail.com>
+Date:   Fri Sep 30 15:59:41 2022 +0900
+
+    2_team_project

@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 
 
 class UserModel(models.Model):
@@ -17,6 +19,7 @@ class ProfileModel(models.Model):
     class Meta:
         db_table = "profile"
 
-    nickname = models.ForeignKey(UserModel, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=256, blank=True)    # 필드에 blank = True widget(양식) 유효성 검사에서 빈 값을 입력 할 수 있다.
+    nickname = models.ForeignKey(UserModel, on_delete=models.CASCADE, null=True, blank=True)
+    bio = models.CharField(max_length=500, blank=True)
     user_images = models.ImageField(null=True, upload_to="", blank=True)
+    follow = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='followee')
