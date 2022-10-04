@@ -4,7 +4,9 @@ from users import views
 
 app_name = 'users'
 urlpatterns = [
-    path('login_page/', views.login_page, name='login_page'),
+    path('login_page/', views.login_view, name='login_page'),
     path('make_user/', views.make_user, name='make_user'),
-    path('', views.home, name='home'),
+    path('profile_page/', views.profile_page, name='profile_page'),
+    path('logout/', views.logout, name='logout'),
+    path('user/follow/<int:id>/', views.user_follow, name='user-follow'),
 ]

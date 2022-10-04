@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <title>{% block title %} Detailed Post {% endblock %}</title>
+
+
+    {% block content %}
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .users_post_box{
+            border: 1px solid red;
+            
+            width:80%;
+            height: 500px;
+            box-sizing: border-box;
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 80px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .delete_btn{
+            float: left;
+            margin-top: 300px;
+        }
+
+        .edit_btn{
+            float: left;
+            margin-top: 300px;
+        }
+
+
+        /* ---------------------------------------------- */
+
+        .comment_writer_list {
+            border: 1px solid red;
+            float: left;
+            width:20%;
+            box-sizing: border-box;
+            margin-left: 180px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comment_list{
+            border: 1px solid green;
+            float: left;
+            margin-left: 5%;
+            width:50%;
+            box-sizing: border-box;
+        }
+
+
+        .now_user_name {
+            border: 1px solid red;
+            float: left;
+            width:20%;
+            box-sizing: border-box;
+            margin-left: 180px;
+            margin-top: 50px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comment_write{
+            border: 1px solid green;
+            float: left;
+            margin-left: 5%;
+            margin-top: 50px;
+            width:50%;
+            box-sizing: border-box;
+        }
+
+        .comment_save_btn{
+            float: right;
+        }
+
+        .comment_delete_btn{
+            float: right;
+        }
+
+
+        .comment_box_1{
+            margin-top: 30px;
+        }
+        
+        .comment_box_2{
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="detailed_post"></div>
+
+    <div class="users_post_box">
+        <div class="post_comment">
+            <h1> 내용 가져 오는 변수 필요 </h1>
+        </div>
+
+        <div class="delete_btn" href="/">
+            <button class="btn-hover color-1">Delete</button>
+        </div>
+
+        <div class="edit_btn" href="/">
+            <button class="btn-hover color-2">Edit</button>
+        </div>
+
+
+    </div>
+
+
+    <div class="comment_box_1">
+
+        <div class="comment_writer_list">
+            <!-- 변수 설정해줘야됨 -->
+            <h1>작성자 닉네임</h1>  
+        </div>
+
+
+        <div class="comment_list">
+            <!-- 변수 설정해줘야됨 -->
+            <h1>댓글</h1>
+            <button class="comment_delete_btn"> 삭제 </button>
+        </div>
+
+    </div>
+
+
+    <div class="comment_box_2">
+
+        <div class="now_user_name">
+            <!-- 변수 설정해줘야됨 -->
+            <h1>작성자 닉네임</h1>  
+        </div>
+
+
+        <div class="comment_write">
+            <!-- 변수 설정해줘야됨 -->  
+            <input type="text" class="form-control" id="comment_write" placeholder="댓글을 남겨주세요">
+            <button class="comment_save_btn"> 게시 </button>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>
+
+
+{% endblock %}
