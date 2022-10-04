@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <title>{% block title %} Make Post {% endblock %}</title>
+
+
+{% block content %}
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .users_ifm_frame {
+            border: 1px solid red;
+            float: left;
+            width:30%;
+            box-sizing: border-box;
+            margin-left: 80px;
+            margin-top: 80px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .write_post_frame{
+            height: 500px;
+            border: 1px solid green;
+            float: left;
+            margin-left: 5%;
+            margin-top: 80px;
+
+            width:50%;
+            box-sizing: border-box;
+        }
+
+        .delete_save_input{
+            border: 1px solid green;
+        }
+
+        /* ------------------------------------------------------ */
+
+
+        .users_photo{
+            margin-top: 50px;
+            margin-left: 40px;
+        }
+
+        .users_ifm {
+            margin-left: 40px;
+            margin-top: 50px;
+            font-size: large;
+            font-weight: bold;
+            background-color: lightblue;
+        }
+
+
+
+        /* ------------------------------------------------------ */
+
+
+        .delete_save_input {
+            width: 100%;
+            height: 200px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="make_post"></div>
+
+    
+    <div class="users_ifm_frame">
+        <div class="users_photo"><img
+            src="https://url.kr/ek3mwr"
+            alt="Users Image" width="200" height="200">
+        </div>
+
+        <div class="users_ifm">
+            <p>닉네임: </p>
+        </div>
+    </div>
+    
+
+
+    <div class="write_post_frame">
+        <div class="make_title">
+            <label for="make_title" class="post">글 제목</label>
+            <input type="text" class="form-control" id="make_title" placeholder="제목 입력">
+        </div>
+
+        <div class="make_post">
+            <label for="make_post" class="post">게시글</label>
+            <input type="text" class="form-control" id="make_post" placeholder="게시글 입력">
+        </div>
+    </div>
+
+
+    <div class="delete_save_input" >
+
+        <div class="delete_btn" href="/">
+            <button class="btn-hover color-1">Delete</button>
+        </div>
+
+        <div class="save_btn" href="/">
+            <button class="btn-hover color-2">Save</button>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+{% endblock %}

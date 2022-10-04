@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>{% block title %} Main Page {% endblock %}</title>
+
+    
+{% block content %}
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .post_title_list {
+            border: 1px solid red;
+            float: left;
+            width:40%;
+            box-sizing: border-box;
+            margin-left: 150px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .post_writer_list{
+            border: 1px solid green;
+            float: left;
+            margin-left: 5%;
+            width:30%;
+            box-sizing: border-box;
+        }
+    
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="main_page"></div>
+
+    <div class="main_page_container">
+
+        <div class="post_title_list">
+            <!-- 변수 설정해줘야됨 -->
+            <h1>글 제목</h1>  
+        </div>
+
+
+        <div class="post_writer_list">
+            <!-- 변수 설정해줘야됨 -->
+            <h1>작성자</h1>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}
