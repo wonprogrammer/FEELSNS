@@ -4,6 +4,12 @@ from django.contrib.auth import get_user_model
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
+def home(request):
+    user = request.user.is_authenticated  
+    if user:
+        return redirect('/main_page')
+    else:
+        return redirect('/login_page')
 
 def profile_page(request):
     return render(request, 'profile_page.html')
@@ -44,7 +50,7 @@ def login_view(request):
         login_id = request.POST.get('login_id', '')
         password = request.POST.get('password', '')
         me = auth.authenticate(request, login_id=login_id, password=password)
-        #me = UserModel.object.get(username=username, password=password)
+        # me = UserModel.object.get(username=username, password=password)
         if me is not None:
             auth.login(request, me)
             return redirect('/') # 글쓰기 페이지

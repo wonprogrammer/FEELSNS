@@ -8,7 +8,7 @@ class Post(models.Model):
         db_table = "post"
 
     nickname = models.ForeignKey(UserModel, on_delete=models.CASCADE)
-    title = models.TextField(max_length=16, null=False)
+    title = models.TextField(max_length=16, null=True, default='')
     post = models.TextField(max_length=10000, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
