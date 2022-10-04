@@ -11,11 +11,11 @@ def profile_page(request):
 
 def make_user(request):
     if request.method == 'GET':
-        # user = request.user.is_authenticated
-        # if user:
-        #     return redirect('/')
-        # else:
-        return render(request, 'make_user.html')
+        user = request.user.is_authenticated
+        if user:
+            return redirect('/')
+        else:
+            return render(request, 'make_user.html')
     elif request.method == 'POST':
         login_id = request.POST.get('login_id', '')
         password = request.POST.get('password', '')
@@ -52,16 +52,16 @@ def login_view(request):
             return render(request, 'login_page.html',{'error':'유저이름 혹은 패스워드를 확인 해 주세요'})
     elif request.method == 'GET':
         user = request.user.is_authenticated  # 사용자가 로그인 되어 있는지 검사
-        # if user:  # 로그인이 되어 있다면
-        #     return redirect('/')
-        # else:  # 로그인이 되어 있지 않다면
-        return render(request, 'login_page.html')
+        if user:  # 로그인이 되어 있다면
+            return redirect('/')
+        else:  # 로그인이 되어 있지 않다면
+            return render(request, 'login_page.html')
 
 
 @login_required
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('/login_page')
 
 
 @login_required
