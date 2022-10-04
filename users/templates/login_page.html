@@ -115,7 +115,7 @@
             <input type="password" placeholder="Password" id="password" class="account">
             <br />
             <button id="login" class="account">login</button>
-            <button id="create_user" class="account">Make Account</button>
+            <a href="{% url 'users:make_user' %}" id="create_user" class="btn btn-primary">Make Account</a>
             <p id="alert" class="account"> </p>
         </div>
     </div>

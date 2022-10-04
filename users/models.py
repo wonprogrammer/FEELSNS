@@ -6,8 +6,8 @@ class UserModel(models.Model):
     class Meta:
         db_table = "user"
 
-    login_id = models.TextField(max_length=16, null=False)
-    nickname = models.TextField(max_length=16, null=False)
+    login_id = models.CharField(max_length=16, null=False)
+    nickname = models.CharField(max_length=16, null=False)
     password = models.CharField(max_length=256, null=False)
     password2 = models.CharField(max_length=256, null=False)
 
