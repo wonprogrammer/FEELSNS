@@ -10,3 +10,7 @@ def login_page(request):
 
 def make_user(request):
     return render(request, 'make_user.html')
+
+
+def profile_page(request):
+    return render(request, 'profile_page.html')
