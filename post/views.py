@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Post
+from django.shortcuts import render, redirect
+
 
 def main_page(request):
     return render(request, 'main_page.html')

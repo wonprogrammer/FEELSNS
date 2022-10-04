@@ -1,3 +1,4 @@
+from turtle import onclick
 from django.shortcuts import render, redirect
 from .models import UserModel
 from django.contrib.auth import get_user_model
@@ -37,16 +38,13 @@ def make_user(request):
             if exist_user:
                 return render(request, 'make_user.html', {'error': '사용자가 존재합니다'})
             else:
-                new_user = UserModel()
-                new_user.username = username
-                new_user.password = password
-                new_user.nickname = nickname
-                new_user.save()
+                UserModel.objects.create_user(username=username, password=password, nickname=nickname)
                 return redirect('/login_page')
 
 
 def login_view(request):
     if request.method == 'POST':
+        
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         me = auth.authenticate(request, username=username, password=password)
@@ -67,7 +65,7 @@ def login_view(request):
 @login_required
 def logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('/login_page')
 
 
 @login_required
