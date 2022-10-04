@@ -36,15 +36,16 @@
             background-size: cover;
 
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
         }
 
-
         .welcome_msg{
-            margin-top: 60px;
+            margin-left: 600px;
         }
+
+
 
 
         .idpwd_input {
@@ -90,41 +91,45 @@
         }
 
 
-        .back_login_btn {
-            max-width: 300px;
-            margin-left: 2000px;
-
-            width: 100%;
-
-            color: darkslateblue;
-
-            align-items: center;
-            justify-content: center;
-
-            display: flex;
-            flex-direction: row;
+        .btn-hover.color-2 {
+            margin-left: 350px;
+            background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+            box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
         }
 
-        .back_login_btn > button {
-            width: 200px;
-            height: 50px;
+        .buttons {
+            margin: 10%;
+            text-align: center;
+        }
 
-            background-color: rgb(128, 116, 201);
-            color: white;
+        .btn-hover {
+            width: 200px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 20px;
+            height: 55px;
+            text-align: center;
+            border: none;
+            background-size: 300% 100%;
 
             border-radius: 50px;
-            border: 1px solid palevioletred;
-
-            margin-top: 10px;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
         }
 
-        .back_login_btn > button:hover {
-            border: 2px solid white;
+        .btn-hover:hover {
+            background-position: 100% 0;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
         }
 
-
-
-
+        .btn-hover:focus {
+            outline: none;
+        }
     </style>
 
 </head>
@@ -137,9 +142,10 @@
             <h1 style="color:white;"> 회원가입 </h1>
         </div>
         
-        <div class="back_login_btn">
-            <button> Login</button>
+        <div class="login_btn" href="/">
+            <button class="btn-hover color-2">Login</button>
         </div>
+
     </div>
 
 
