@@ -111,12 +111,25 @@
 
     <div class="idpwd_input" >
         <div class="container">
-            <input type="text" placeholder="ID" id="id" class="account">
-            <input type="password" placeholder="Password" id="password" class="account">
-            <br />
-            <button id="login" class="account">login</button>
-            <a href="{% url 'users:make_user' %}" id="create_user" class="btn btn-primary">Make Account</a>
-            <p id="alert" class="account"> </p>
+            <div class="wrap">
+                <form class="form-area" method="post" action="/make_user/">
+                    {% csrf_token %}
+                    <div class="form-group mt-2 mb-2">
+                    <input type="text" placeholder="ID" id="login_id" class="form-control" name="login_id">
+                    </div>
+                    <div class="form-group mt-2 mb-2">
+                    <input type="password" placeholder="Password" id="password" class="form-control" name="password">
+                    </div>
+                    <br />
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary">login</button>
+                    <a href="{% url 'users:make_user' %}" class="btn btn-primary">Make Account</a>
+                    <p id="alert" class="account"> </p>
+            </div>
         </div>
     </div>
 

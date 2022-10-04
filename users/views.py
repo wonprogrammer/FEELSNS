@@ -5,16 +5,24 @@ from django.contrib.auth import get_user_model
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
+def home(request):
+    user = request.user.is_authenticated  
+    if user:
+        return redirect('/main_page')
+    else:
+        return redirect('/login_page')
+
+
 def login_page(request):
     return render(request, 'login_page.html')
 
 def make_user(request):
     if request.method == 'GET':
-        # user = request.user.is_authenticated
-        # if user:
-        #     return redirect('/')
-        # else:
-        return render(request, 'make_user.html')
+        user = request.user.is_authenticated
+        if user:
+            return redirect('/')
+        else:
+            return render(request, 'make_user.html')
     elif request.method == 'POST':
         login_id = request.POST.get('login_id', '')
         password = request.POST.get('password', '')
