@@ -1,3 +1,4 @@
+from turtle import onclick
 from django.shortcuts import render, redirect
 from .models import UserModel
 from django.contrib.auth import get_user_model
@@ -23,7 +24,7 @@ def make_user(request):
         else:
             return render(request, 'make_user.html')
     elif request.method == 'POST':
-        login_id = request.POST.get('login_id', '')
+        username = request.POST.get('username', '')
         password = request.POST.get('password', '')
         password2 = request.POST.get('password2', '')
         nickname = request.POST.get('nickname', '')
@@ -31,25 +32,22 @@ def make_user(request):
         if password != password2:
             return render(request, 'make_user.html', {'error': '패스워드를 확인 해 주세요!'})
         else:
-            if login_id == '' or password == '':
+            if username == '' or password == '':
                 return render(request, 'make_user.html', {'error': '사용자 이름과 비밀번호는 필수 값 입니다!'})
-            exist_user = UserModel.objects.filter(login_id=login_id)
+            exist_user = UserModel.objects.filter(username=username)
             if exist_user:
                 return render(request, 'make_user.html', {'error': '사용자가 존재합니다'})
             else:
-                new_user = UserModel()
-                new_user.login_id = login_id
-                new_user.password = password
-                new_user.nickname = nickname
-                new_user.save()
+                UserModel.objects.create_user(username=username, password=password, nickname=nickname)
                 return redirect('/login_page')
 
 
 def login_view(request):
     if request.method == 'POST':
-        login_id = request.POST.get('login_id', '')
+        
+        username = request.POST.get('username', '')
         password = request.POST.get('password', '')
-        me = auth.authenticate(request, login_id=login_id, password=password)
+        me = auth.authenticate(request, username=username, password=password)
         # me = UserModel.object.get(username=username, password=password)
         if me is not None:
             auth.login(request, me)
@@ -74,7 +72,7 @@ def logout(request):
 def user_view(request):
     if request.method == 'GET':
         # 사용자를 불러오기, exclude와 request.user.username 를 사용해서 '로그인 한 사용자'를 제외하기
-        user_list = UserModel.objects.all().exclude(login_id=request.user.login_id)
+        user_list = UserModel.objects.all().exclude(username=request.user.username)
         return render(request, 'user/profile_page.html', {'user_list': user_list})
 
 

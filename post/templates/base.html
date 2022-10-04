@@ -44,6 +44,8 @@
 
         .welcome_msg{
             margin-left: 50px;
+            color: white;
+            font-size: large;
         }
 
 
@@ -118,7 +120,9 @@
     <div class="welcome">
 
         <div class="welcome_msg">
-            <a class="navbar-brand" style="color:white;" href="/"> FEELSNS </a>
+            <h1>
+                <a href="{% url 'post:main_page' %}"> FEELSNS </a> 
+            </h1>
         </div>
 
         <div class="follow_page_btn">
@@ -140,11 +144,13 @@
 
 
         <div class="write_post_btn" href="/">
-            <button class="btn-hover color-1">+ Post</button>
+            <button class="btn-hover color-1" onclick="location.href='/detailed_post'">+ Post</button>
         </div>
 
         <div class="logout_btn" href="/">
-            <button class="btn-hover color-2">Logout</button>
+            <li class="nav-item active">
+                <a class="nav-link" href="/logout"> 로그아웃 </a>
+            </li>
         </div>
 
 
