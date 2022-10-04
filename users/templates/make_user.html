@@ -5,23 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
     <title>Make user</title>
-
-
     <style>
         * {
             font-family: 'Gowun Dodum', sans-serif;
@@ -30,33 +23,22 @@
         .welcome {
             width: 100%;
             height: 200px;
-
             background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcrKYSP%2FbtrNs3uwYh3%2FWkoTcfCdIzeTKPqtsIveT1%2Fimg.jpg');
-
             background-position: center;
             background-size: cover;
-
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .welcome_msg{
-            margin-left: 600px;
         }
 
         .welcome_msg {
             margin-top: 60px;
         }
 
-
-
-
         .idpwd_input {
             margin: 100px;
             height: 600px;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -68,7 +50,6 @@
         .container {
             margin: 100px;
             height: 400px;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -95,75 +76,43 @@
             border-color: transparent;
         }
 
-
-        .btn-hover.color-2 {
-            margin-left: 350px;
-            background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
-            box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+        .back_login_btn {
+            max-width: 300px;
+            margin-left: 2000px;
+            width: 100%;
+            color: darkslateblue;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
         }
 
-        .buttons {
-            margin: 10%;
-            text-align: center;
-        }
         .back_login_btn>button {
             width: 200px;
             height: 50px;
-        }
-
-        .btn-hover {
-            width: 200px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            cursor: pointer;
-            margin: 20px;
-            height: 55px;
-            text-align: center;
-            border: none;
-            background-size: 300% 100%;
-
+            background-color: rgb(128, 116, 201);
+            color: white;
             border-radius: 50px;
-            -o-transition: all .4s ease-in-out;
-            -webkit-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
+            border: 1px solid palevioletred;
+            margin-top: 10px;
         }
 
-        .btn-hover:hover {
-            background-position: 100% 0;
-            -o-transition: all .4s ease-in-out;
-            -webkit-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-        }
-
-        .btn-hover:focus {
-            outline: none;
-        }
         .back_login_btn>button:hover {
             border: 2px solid white;
         }
     </style>
-
 </head>
 
 <body>
     <div class="make_user"></div>
-
     <div class="welcome">
         <div class="welcome_msg">
             <h1 style="color:white;"> 회원가입 </h1>
         </div>
-        
-        <div class="login_btn" href="/">
-            <button class="btn-hover color-2">Login</button>
-
         <div class="back_login_btn">
             <button> Login</button>
         </div>
-
     </div>
-
-
     <div class="idpwd_input">
         <div class="container">
             <div class="wrap">
@@ -202,10 +151,6 @@
                     </div>
             </div>
         </div>
-
-
-
-
 </body>
 
 </html>
