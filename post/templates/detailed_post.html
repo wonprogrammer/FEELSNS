@@ -119,8 +119,11 @@
     <div class="detailed_post"></div>
 
     <div class="users_post_box">
+        <div class="title">
+            <h1>{{post.title}}</h1>
+
         <div class="post_comment">
-            <h1> 내용 가져 오는 변수 필요 </h1>
+            <h1> {{post.body}} </h1>
         </div>
 
         <div class="delete_btn" href="/">
@@ -139,13 +142,13 @@
 
         <div class="comment_writer_list">
             <!-- 변수 설정해줘야됨 -->
-            <h1>작성자 닉네임</h1>  
+            <h1>{{post.username}}</h1>  
         </div>
 
 
         <div class="comment_list">
             <!-- 변수 설정해줘야됨 -->
-            <h1>댓글</h1>
+            <h1>{{post.comment}}</h1>
             <button class="comment_delete_btn"> 삭제 </button>
         </div>
 
