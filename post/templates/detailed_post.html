@@ -217,36 +217,17 @@
                 <button class="comment_delete_btn"> 삭제 </button>
             </div>
 
-            <div class="comment_writer_list">
-                <h4> Name | {{post.username}}</h4>
-            </div>
-            
-            <div class="comment_list">
-                <!-- 변수 설정해줘야됨 -->
-                <h4> 댓글 | {{post.comment}}</h4>
-                <button class="comment_delete_btn"> 삭제 </button>
-            </div>
-
-            <div class="comment_writer_list">
-                <h4> Name | {{post.username}}</h4>
-            </div>
-            
-            <div class="comment_list">
-                <!-- 변수 설정해줘야됨 -->
-                <h4> 댓글 | {{post.comment}}</h4>
-                <button class="comment_delete_btn"> 삭제 </button>
-            </div>
 
         </div>
 
 
         <div class="comment_box_2">
             <div class="now_user_name">
-                <!-- 변수 설정해줘야됨 -->
-                <h5>작성자 닉네임</h5>
+                <h5>{{ user.nickname }}</h5>
             </div>
+
+
             <div class="comment_write">
-                <!-- 변수 설정해줘야됨 -->
                 <input type="text" class="form-control" id="comment_write" placeholder="댓글을 남겨주세요">
                 <button class="comment_save_btn"> 게시 </button>
             </div>
@@ -258,5 +239,3 @@
 
 
 {% endblock %}
-
-<!-- ---------------------------------------------- -->

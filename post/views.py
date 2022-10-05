@@ -28,9 +28,14 @@ def create_post(request):
     return redirect('/detailed_post/' + str(post.id))
 
 
+
+
 def detailed_post(request, post_id):
     post_detail = get_object_or_404(Post, pk=post_id)
     return render(request, 'detailed_post.html', {'post': post_detail})
+
+
+
 
 def new_post(request):
     full_text = request.GET['fulltext']
@@ -50,3 +55,14 @@ def new_post(request):
     return render(request, 'make_post.html', {'fulltext': full_text, 'total': len(word_list), 'dictionary': word_dictionary.items()} )
 
 
+
+# def detailed_post(request,post_id):
+#   post_detail = get_object_or_404(Post,pk=post_id)
+#   comments = comment.objects.filter(post = post_id)
+#   if request.method == "POST":
+#     comment = comment()
+#     comment.post = post_detail
+#     comment.body = request.POST['body']
+#     comment.date = timezone.now()
+#     comment.save()
+#   return render(request,'detail.html',{'post':post_detail, 'comments':comments})
