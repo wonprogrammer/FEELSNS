@@ -90,11 +90,7 @@
             <h1> [작성자]</h1>
 
             {% for post in posts.all %}
-            <div class="user_post_nickname">
-                <ul>
-                    <h1>{{post.nickname}}</h1>  
-                </ul>
-            </div>
+            <h1>{{post.nickname}}</h1>  
             {% endfor %}
         </div>
 

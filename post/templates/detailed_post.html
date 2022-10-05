@@ -146,7 +146,6 @@
             margin-top: 100px;
         }
 
-
         .comment_write{
             margin-bottom: 100px;
             margin-top: 100px;
@@ -162,6 +161,7 @@
             outline: 0;
             text-align: center;
         }
+
 
         .comment_save_btn{
             height: 40px;
@@ -195,11 +195,11 @@
 
             <div class="btns">
                 <div class="delete_btn" href="/">
-                    <button class="btn-hover color-1">Delete</button>
+                    <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-1">Delete</button></a>
                 </div>
 
                 <div class="edit_btn" href="/">
-                    <button class="btn-hover color-2">Edit</button>
+                    <a href="{% url 'post:edit_post' post.id %}"><button class="btn-hover color-2">Edit</button></a>
                 </div>
             </div>
         </div>
