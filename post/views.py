@@ -2,6 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post
 from django.utils import timezone
 from django.shortcuts import render, redirect
+from .models import Post
+from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView, TemplateView
+
+
 
 
 def main_page(request):

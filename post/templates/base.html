@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -71,10 +72,11 @@
         }
 
         .btn-hover.color-2 {
-            margin-left: 10px;
+            margin-left: 50px;
             background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
             box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
         }
+
 
         .buttons {
             margin: 10%;
@@ -108,6 +110,10 @@
 
         .btn-hover:focus {
             outline: none;
+        }
+
+        .nav-link{
+            color: white;
         }
 
     </style>
@@ -144,13 +150,15 @@
 
 
         <div class="write_post_btn" href="/">
-            <button class="btn-hover color-1" onclick="location.href='/make_post'">+ Post</button>
+            <h5><button class="btn-hover color-1" onclick="location.href='/make_post'">+ Post</button></h5>
         </div>
 
-        <div class="logout_btn" href="/">
-            <li class="nav-item active">
-                <a class="nav-link" href="/logout"> 로그아웃 </a>
-            </li>
+        <div class="logout_btn" href="/" style="color:white">
+            <div class="nav-item active">
+                <div class="btn-hover color-2">
+                    <h5><a class="nav-link" href="/logout"> 로그아웃 </a></h5>
+                </div>
+            </div>
         </div>
 
     </div>

@@ -34,17 +34,13 @@
 
         .users_photo {
             margin-top: 50px;
-            margin-left: 40px;
         }
 
         .users_ifm {
-            margin-left: 40px;
             margin-top: 50px;
+
             font-size: large;
             font-weight: bold;
-
-            background-color: lightblue;
-
         }
 
 
@@ -52,10 +48,12 @@
         .profile_page_container {
             width: 90%;
             margin: 10px auto;
+
+            text-align: center;
         }
 
         .users_ifm_frame {
-            border: 1px solid red;
+            /* border: 1px solid red; */
             float: left;
             width: 30%;
             box-sizing: border-box;
@@ -92,19 +90,19 @@
                     alt="Users Image" width="200" height="200">
             </div>
 
-
-            <div class="users_ifm">
-                <p>닉네임: 원</p>
-                <p>소개: Hi~</p>
-                블로그 주소: <a href="https://wonprogrammer.tistory.com"> "Go To my blog" </a>
-            </div>
-
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ user.nickname }}</h5>
                     <p class="card-text"> {{ profile.bio }}</p>
                 </div>
             </div>
+
+            <div class="users_ifm">
+                <p>소개: Hi~</p>
+                블로그 주소: <a href="https://wonprogrammer.tistory.com"> "Go To my blog" </a>
+            </div>
+
+          
 
         </div>
 
