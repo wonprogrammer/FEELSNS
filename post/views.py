@@ -27,6 +27,7 @@ def create_post(request):
     post.save()
     return redirect('/detailed_post/' + str(post.id))
 
+
 @login_required
 def detailed_post(request, post_id):
     post_detail = get_object_or_404(Post, pk=post_id)
@@ -74,3 +75,15 @@ def delete_post(request, post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return redirect('/')
+
+
+# def detailed_post(request,post_id):
+#   post_detail = get_object_or_404(Post,pk=post_id)
+#   comments = comment.objects.filter(post = post_id)
+#   if request.method == "POST":
+#     comment = comment()
+#     comment.post = post_detail
+#     comment.body = request.POST['body']
+#     comment.date = timezone.now()
+#     comment.save()
+#   return render(request,'detail.html',{'post':post_detail, 'comments':comments})

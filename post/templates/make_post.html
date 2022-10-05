@@ -66,7 +66,7 @@
         .col-md-3 {
             margin-left: 100px;
             margin-top: 50px;
-            width: 200px;
+            width: 300px;
             height: 200px;
             
             font-size: large;
@@ -115,19 +115,18 @@
 
     
     <div class="users_ifm_frame">
-        <div class="users_photo"><img
-            src="https://url.kr/ek3mwr"
-            alt="Users Image" width="200" height="200">
-        </div>
 
-        <!-- <div class="users_ifm">
-            <p>닉네임: </p>
-        </div> -->
+        {% if user.user_images %} 
+        <div class="users_photo"><img src="{{ user.user_images.url }}" alt="Users Image" width="300" height="250"> 
+        </div> 
+        {% else %}
+        <p>No Image</p>
+        {% endif %} 
 
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ user.username }}</h5>
+                    <h5 class="card-title">{{ user.nickname }}</h5>
                 </div>
             </div>
         </div>
