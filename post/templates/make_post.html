@@ -28,7 +28,7 @@
         }
 
         .users_ifm_frame {
-            border: 1px solid red;
+            /* border: 1px solid palevioletred; */
             float: left;
             width:30%;
             box-sizing: border-box;
@@ -41,7 +41,7 @@
 
         .write_post_frame{
             height: 500px;
-            border: 1px solid green;
+            /* border: 1px solid palevioletred; */
             float: left;
             margin-left: 5%;
             margin-top: 80px;
@@ -52,7 +52,7 @@
         }
 
         .delete_save_input{
-            border: 1px solid green;
+            border: 1px solid palevioletred;
         }
 
         /* ------------------------------------------------------ */
@@ -60,16 +60,18 @@
 
         .users_photo{
             margin-top: 50px;
-            margin-left: 40px;
+            margin-left: 100px;
         }
 
         .col-md-3 {
-            margin-left: 40px;
+            margin-left: 100px;
             margin-top: 50px;
             width: 200px;
+            height: 200px;
+            
             font-size: large;
             font-weight: bold;
-            background-color: lightblue;
+
         }
 
 
@@ -154,12 +156,12 @@
 
             <div class="make_title">
                 <label for="make_title" class="post">글 제목</label>
-                <input type="text" class="form-control" id="make_title" placeholder="제목 입력" name="title">
+                <input type="text" class="form-control" id="make_title" placeholder="제목을 입력해 주세요" name="title">
             </div>
 
             <div class="form-group mb-2">
                 <label for="write_post" class="post">게시글 작성</label>
-                <textarea class="form-control" id='write_post'  style="resize: none" name='body' id="write_post"></textarea>
+                <textarea class="form-control" id='write_post'  style="resize: none" name='body' id="write_post" placeholder="게시글을 입력해 주세요"></textarea>
             </div>
             <!-- <button type="submit" class="btn btn-primary" style="float:right;">작성하기
             </button> -->
