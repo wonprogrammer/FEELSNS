@@ -33,17 +33,21 @@
 
 
         .users_photo {
-            margin-top: 50px;
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .users_ifm {
-            margin-top: 50px;
-
+            margin: 30px;
             font-size: large;
             font-weight: bold;
+
+            background-color: pink;
+
         }
-
-
 
         .profile_page_container {
             width: 90%;
@@ -76,6 +80,12 @@
             width: 30%;
             box-sizing: border-box;
         }
+
+        .btn-fileupload {
+            margin-left: 10px;
+            background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+            box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+        }
     </style>
 
 </head>
@@ -86,77 +96,36 @@
     <div class="profile_page_container">
         <div class="users_ifm_frame">
             <div class="users_photo"><img
-                    src="https://blog.kakaocdn.net/dn/zwTj3/btrKZCORyr0/AeMD3nJkSfXURxOpPS3lDk/img.gif"
-                    alt="Users Image" width="200" height="200">
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ user.nickname }}</h5>
-                    <p class="card-text"> {{ profile.bio }}</p>
-                </div>
+                    src="{{ user.user_images.url }}"
+                    alt="Users Image" width="300"/>
             </div>
 
             <div class="users_ifm">
-                <p>소개: Hi~</p>
-                블로그 주소: <a href="https://wonprogrammer.tistory.com"> "Go To my blog" </a>
+                <p>닉네임 : {{ user.nickname }}</p>
+                <p>소개 : {{ user.bio }}</p>
             </div>
 
-          
+            <div class="write_post_btn" href="/">
+                <button class="btn-hover color-2" onclick="location.href='/fileupload'">프로필 편집</button>
+            </div>
 
         </div>
-
-
 
         <div class="follower_frame">
-            <div class="follower_number">
-                <h2>follower | {{ user.followee.count }} 명 </h2>   <!-- 변수 들어와야 됨 -->
+            {% for ul in user_list %}
+            <div class="users_ifm">
+                <h5 class="card-title">{{ ul.nickname }}</h5>
+                <p class="card-text">
+                    팔로잉 {{ ul.follow.count }} 명 / 팔로워 {{ ul.followee.count }} 명
+                </p>
+                {% if ul in user.follow.all %}
+                <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우 취소]</a>
+                {% else %}
+                <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우]</a>
+                {% endif %}
             </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ ul.username }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ ul.email }}</h6>
-                    <p class="card-text">
-                        {{ ul.bio }}
-                    </p>
-                    <p class="card-text">
-                        팔로워 {{ ul.followee.count }} 명
-                    </p>
-                    {% if ul in user.follow.all %}
-                    <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우 취소]</a>
-                    {% else %}
-                    <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우]</a>
-                    {% endif %}
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <div class="follow_frame">
-            <div class="follow_number">
-                <h2>follow | {{ user.follow.count }} 명 </h2>   <!-- 변수 들어와야 됨 -->
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ ul.username }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ ul.email }}</h6>
-                    <p class="card-text">
-                        {{ ul.bio }}
-                    </p>
-                    <p class="card-text">
-                        팔로잉 {{ ul.follow.count }} 명
-                    </p>
-                    {% if ul in user.follow.all %}
-                    <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우 취소]</a>
-                    {% else %}
-                    <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우]</a>
-                    {% endif %}
-                </div>
-            </div>
+            <hr>
+            {% endfor %}
         </div>
 
     </div>
