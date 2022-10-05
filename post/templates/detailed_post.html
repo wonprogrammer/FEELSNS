@@ -31,7 +31,7 @@
         .users_post_box {
             /* border: 1px solid red; */
             width: 80%;
-            height: 520px;
+            height: 650px;
             border: 1px solid palevioletred;
             box-sizing: border-box;
             margin-left: 150px;
@@ -53,7 +53,7 @@
             margin-top: 300px;
         }
 
-    
+
         /* ---------------------------------------------- */
 
 
@@ -80,7 +80,7 @@
             box-sizing: border-box;
         }
 
-        .comment_box_1{
+        .comment_box_1 {
             margin-bottom: 500px;
         }
 
@@ -116,62 +116,62 @@
 
         .comment_box_1 {
             margin-top: 30px;
-            
+
         }
 
         .comment_box_2 {
             margin-bottom: 50px;
         }
 
-        .post_title{
+        .post_title {
             background-color: beige;
         }
 
-        .post_comment{
+        .post_comment {
             background-color: beige;
         }
 
-        .comment_delete_btn{
+        .comment_delete_btn {
             height: 40px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             padding-bottom: 30px;
             border: 0;
             outline: 0;
         }
 
-        .comment_writer_list{
-            margin-top: 100px;
-        }
-        .comment_list{
+        .comment_writer_list {
             margin-top: 100px;
         }
 
+        .comment_list {
+            margin-top: 100px;
+        }
 
-        .comment_write{
+        .comment_write {
             margin-bottom: 100px;
             margin-top: 100px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             border: 0;
             outline: 0;
         }
-        .now_user_name{
+
+        .now_user_name {
             margin-bottom: 100px;
             margin-top: 100px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             border: 0;
             outline: 0;
             text-align: center;
         }
 
-        .comment_save_btn{
+
+        .comment_save_btn {
             height: 40px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             padding-bottom: 30px;
             border: 0;
             outline: 0;
         }
-
-        
     </style>
 </head>
 
@@ -195,60 +195,37 @@
 
             <div class="btns">
                 <div class="delete_btn" href="/">
-                    <button class="btn-hover color-1">Delete</button>
+                    <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-1">Delete</button></a>
                 </div>
 
                 <div class="edit_btn" href="/">
-                    <button class="btn-hover color-2">Edit</button>
+                    <a href="{% url 'post:edit_post' post.id %}"><button class="btn-hover color-2">Edit</button></a>
                 </div>
             </div>
         </div>
 
-        
+
 
         <div class="comment_box_1">
             <div class="comment_writer_list">
-                <h4> Name | {{post.username}}</h4>
-            </div>
-            
-            <div class="comment_list">
-                <!-- 변수 설정해줘야됨 -->
-                <h4> 댓글 | {{post.comment}}</h4>
-                <button class="comment_delete_btn"> 삭제 </button>
+                <h4> Name | {{ post.username }}</h4>
             </div>
 
-            <div class="comment_writer_list">
-                <h4> Name | {{post.username}}</h4>
-            </div>
-            
             <div class="comment_list">
-                <!-- 변수 설정해줘야됨 -->
-                <h4> 댓글 | {{post.comment}}</h4>
-                <button class="comment_delete_btn"> 삭제 </button>
+                <h4> 댓글 | {{ post.comment }}</h4>
+                    <button class="comment_delete_btn"> 삭제 </button>
             </div>
-
-            <div class="comment_writer_list">
-                <h4> Name | {{post.username}}</h4>
-            </div>
-            
-            <div class="comment_list">
-                <!-- 변수 설정해줘야됨 -->
-                <h4> 댓글 | {{post.comment}}</h4>
-                <button class="comment_delete_btn"> 삭제 </button>
-            </div>
-
         </div>
 
 
         <div class="comment_box_2">
             <div class="now_user_name">
-                <!-- 변수 설정해줘야됨 -->
-                <h5>작성자 닉네임</h5>
+                <h5>{{ user.nickname }}</h5>
             </div>
+
             <div class="comment_write">
-                <!-- 변수 설정해줘야됨 -->
                 <input type="text" class="form-control" id="comment_write" placeholder="댓글을 남겨주세요">
-                <button class="comment_save_btn"> 게시 </button>
+                    <button class="comment_save_btn"> 게시 </button>
             </div>
         </div>
 </body>
@@ -258,5 +235,3 @@
 
 
 {% endblock %}
-
-<!-- ---------------------------------------------- -->

@@ -17,7 +17,7 @@ class Comment(models.Model):
         db_table = "Comment"
 
     nickname = models.ForeignKey(UserModel, on_delete=models.CASCADE)
-    comment = models.TextField(max_length=3000, null=False)
+    comment = models.TextField(max_length=3000, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
