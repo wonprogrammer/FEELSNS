@@ -34,7 +34,7 @@
         }
 
         .post_title_list {
-            border: 1px solid red;
+            /* border: 1px solid red; */
             float: left;
             width:40%;
             box-sizing: border-box;
@@ -45,13 +45,21 @@
         }
 
         .post_writer_list{
-            border: 1px solid green;
+            /* border: 1px solid green; */
             float: left;
             margin-left: 5%;
             width:30%;
             box-sizing: border-box;
         }
-    
+
+
+        .user_post_title{
+            background-color:beige;
+        }
+
+        .user_post_nickname{
+            background-color:beige;
+        }
 
 
     </style>
@@ -64,17 +72,23 @@
     <div class="main_page_container">
 
         <div class="post_title_list">
+            <h1> [게시글]</h1>
             {% for post in posts.all %}
             <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
-            <ul>
-                <li><a href="{% url 'post:detailed_post' post.id %}">{{post.title}}</a></li>
-            </ul>
+            <div class="user_post_title">
+                <ul>
+                    <h1><a href="{% url 'post:detailed_post' post.id %}">{{post.title}}</a></h1>
+                </ul>
+            </div>
+
         {% endfor %}
         </div>
 
 
         <div class="post_writer_list">
             <!-- 변수 설정해줘야됨 -->
+            <h1> [작성자]</h1>
+
             {% for post in posts.all %}
             <h1>{{post.nickname}}</h1>  
             {% endfor %}
