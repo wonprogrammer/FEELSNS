@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import FileUploadForm
 
 def home(request):
-    user = request.user.is_authenticated  
+    user = request.user.is_authenticated
     if user:
         return redirect('/main_page')
     else:
