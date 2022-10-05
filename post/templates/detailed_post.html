@@ -127,11 +127,11 @@
         </div>
 
         <div class="delete_btn" href="/">
-            <button class="btn-hover color-1">Delete</button>
+            <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-1">Delete</button></a>
         </div>
 
         <div class="edit_btn" href="/">
-            <button class="btn-hover color-2">Edit</button>
+            <a href="{% url 'post:edit_post' post.id %}"><button class="btn-hover color-2">Edit</button></a>
         </div>
 
 

@@ -144,31 +144,16 @@
             <input type="text" class="form-control" id="make_post" placeholder="게시글 입력">
         </div> -->
 
-        <form action="{% url 'post:create_post' %}" method="post">
+
+        <form action="" method="post">
             {% csrf_token %}
-
-            {% if error %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-            {% endif %}
-
             <div class="make_title">
                 <label for="make_title" class="post">글 제목</label>
-                <input type="text" class="form-control" id="make_title" placeholder="제목 입력" name="title">
-            </div>
-
-            <div class="form-group mb-2">
+                <input id="title" class="form-control" placeholder={{ form.title }}</input>
                 <label for="write_post" class="post">게시글 작성</label>
-                <textarea class="form-control" id='write_post'  style="resize: none" name='body' id="write_post"></textarea>
+                <textarea class="form-control" id='write_post'  style="resize: none" name='body' id="write_post" {{ form.body }}</textarea>
             </div>
-            <!-- <button type="submit" class="btn btn-primary" style="float:right;">작성하기
-            </button> -->
-
-            <div class="save_btn" href="/">
-                <button type="submit" class="btn-hover color-2" style="float:right;">Save</button>
-            </div>
-        
+            <button type="submit" class="btn-hover color-2" style="float:right;">Save</button>
         </form>
     </div>
 
