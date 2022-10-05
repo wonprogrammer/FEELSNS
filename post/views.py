@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
+from .models import Comment
 from django.utils import timezone
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
@@ -77,13 +78,3 @@ def delete_post(request, post_id):
     return redirect('/')
 
 
-# def detailed_post(request,post_id):
-#   post_detail = get_object_or_404(Post,pk=post_id)
-#   comments = comment.objects.filter(post = post_id)
-#   if request.method == "POST":
-#     comment = comment()
-#     comment.post = post_detail
-#     comment.body = request.POST['body']
-#     comment.date = timezone.now()
-#     comment.save()
-#   return render(request,'detail.html',{'post':post_detail, 'comments':comments})

@@ -50,6 +50,7 @@
             margin-left: 5%;
             width:30%;
             box-sizing: border-box;
+            
         }
 
 
@@ -88,10 +89,12 @@
         <div class="post_writer_list">
             <!-- 변수 설정해줘야됨 -->
             <h1> [작성자]</h1>
-
-            {% for post in posts.all %}
-            <h1>{{post.nickname}}</h1>  
-            {% endfor %}
+                {% for post in posts.all %}
+                <div class="user_post_nickname">
+                    <h1>{{post.nickname}}</h1>  
+                </div>
+                {% endfor %}
+            </div>
         </div>
 
     </div>
