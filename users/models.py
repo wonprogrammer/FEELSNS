@@ -9,6 +9,6 @@ class UserModel(AbstractUser):
         db_table = "user"
    
     nickname = models.TextField(max_length=16, null=False)
-    bio = models.CharField(max_length=500, blank=True)
-    # user_images = models.ImageField(null=True, upload_to="", blank=True)
-    # follow = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='followee')
+    bio = models.CharField(max_length=500, blank=True, null=True)
+    user_images = models.ImageField(upload_to="images", blank=True, null=True)
+    follow = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='followee')

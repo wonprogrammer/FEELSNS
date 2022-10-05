@@ -4,6 +4,7 @@ from .models import UserModel
 from django.contrib.auth import get_user_model
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from .forms import FileUploadForm
 
 def home(request):
     user = request.user.is_authenticated  
@@ -73,7 +74,7 @@ def user_view(request):
     if request.method == 'GET':
         # 사용자를 불러오기, exclude와 request.user.username 를 사용해서 '로그인 한 사용자'를 제외하기
         user_list = UserModel.objects.all().exclude(username=request.user.username)
-        return render(request, 'user/profile_page.html', {'user_list': user_list})
+        return render(request, 'profile_page.html', {'user_list': user_list, 'user': request.user})
 
 
 @login_required
@@ -84,4 +85,24 @@ def user_follow(request, id):
         click_user.followee.remove(request.user)
     else:
         click_user.followee.add(request.user)
-    return redirect('/users')
+    return redirect('/profile_page')
+
+
+def fileUpload(request):
+    if request.method == 'POST':
+        nickname = request.POST['nickname']
+        bio = request.POST['bio']
+        img = request.FILES["user_images"]
+        user = request.user
+
+        user.nickname = nickname
+        user.bio = bio
+        user.user_images = img
+        user.save()
+        return redirect('/profile_page')
+    else:
+        fileuploadForm = FileUploadForm
+        context = {
+            'fileuploadForm': fileuploadForm,
+        }
+        return render(request, 'fileupload.html', context)
