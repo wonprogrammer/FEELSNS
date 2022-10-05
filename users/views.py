@@ -6,7 +6,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    user = request.user.is_authenticated  
+    user = request.user.is_authenticated
     if user:
         return redirect('/main_page')
     else:

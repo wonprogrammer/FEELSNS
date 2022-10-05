@@ -45,6 +45,7 @@
             float: left;
             margin-left: 5%;
             margin-top: 80px;
+            margin-bottom: 100px;
 
             width:50%;
             box-sizing: border-box;
@@ -62,9 +63,10 @@
             margin-left: 40px;
         }
 
-        .users_ifm {
+        .col-md-3 {
             margin-left: 40px;
             margin-top: 50px;
+            width: 200px;
             font-size: large;
             font-weight: bold;
             background-color: lightblue;
@@ -85,10 +87,21 @@
             justify-content: center;
         }
 
-        #make_post{
-            height: 400px;
+        .make_title{
+            margin-bottom: 20px;
         }
 
+        #write_post{
+            height: 300px;
+            
+        }
+
+
+        .btn btn-primary{
+            margin-left: 50px;
+            background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+            box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+        }
         
     </style>
 </head>
@@ -104,27 +117,62 @@
             alt="Users Image" width="200" height="200">
         </div>
 
-        <div class="users_ifm">
+        <!-- <div class="users_ifm">
             <p>닉네임: </p>
+        </div> -->
+
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.username }}</h5>
+                </div>
+            </div>
         </div>
+
     </div>
     
 
 
     <div class="write_post_frame">
-        <div class="make_title">
+        <!-- <div class="make_title">
             <label for="make_title" class="post">글 제목</label>
             <input type="text" class="form-control" id="make_title" placeholder="제목 입력">
-        </div>
+        </div> -->
 
-        <div class="make_post">
+        <!-- <div class="make_post">
             <label for="make_post" class="post">게시글</label>
             <input type="text" class="form-control" id="make_post" placeholder="게시글 입력">
-        </div>
+        </div> -->
+
+        <form action="{% url 'post:create_post' %}" method="post">
+            {% csrf_token %}
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <div class="make_title">
+                <label for="make_title" class="post">글 제목</label>
+                <input type="text" class="form-control" id="make_title" placeholder="제목 입력" name="title">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="write_post" class="post">게시글 작성</label>
+                <textarea class="form-control" id='write_post'  style="resize: none" name='body' id="write_post"></textarea>
+            </div>
+            <!-- <button type="submit" class="btn btn-primary" style="float:right;">작성하기
+            </button> -->
+
+            <div class="save_btn" href="/">
+                <button type="submit" class="btn-hover color-2" style="float:right;">Save</button>
+            </div>
+        
+        </form>
     </div>
 
 
-    <div class="delete_save_input" >
+    <!-- <div class="delete_save_input" >
 
         <div class="delete_btn" href="/">
             <button class="btn-hover color-1">Delete</button>
@@ -134,7 +182,7 @@
             <button class="btn-hover color-2">Save</button>
         </div>
 
-    </div>
+    </div> -->
 </body>
 </html>
 

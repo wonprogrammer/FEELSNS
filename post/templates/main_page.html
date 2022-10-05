@@ -64,14 +64,20 @@
     <div class="main_page_container">
 
         <div class="post_title_list">
-            <!-- 변수 설정해줘야됨 -->
-            <h1>글 제목</h1>  
+            {% for post in posts.all %}
+            <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
+            <ul>
+                <li><a href="{% url 'post:detailed_post' post.id %}">{{post.title}}</a></li>
+            </ul>
+        {% endfor %}
         </div>
 
 
         <div class="post_writer_list">
             <!-- 변수 설정해줘야됨 -->
-            <h1>작성자</h1>
+            {% for post in posts.all %}
+            <h1>{{user.nickname}}</h1>  
+            {% endfor %}
         </div>
 
     </div>
