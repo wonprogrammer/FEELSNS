@@ -115,12 +115,13 @@
         }
 
         .comment_box_1 {
-            margin-top: 30px;
-
+            margin-top: 200px;
         }
 
         .comment_box_2 {
             margin-bottom: 50px;
+            margin-top: 500px;
+            border: 1px solid palevioletred;
         }
 
         .post_title {
@@ -195,7 +196,7 @@
 
             <div class="btns">
                 <div class="delete_btn" href="/">
-                    <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-1">Delete</button></a>
+                    <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-2">Delete</button></a>
                 </div>
 
                 <div class="edit_btn" href="/">
