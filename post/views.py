@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
-from .models import Comment
+from .models import Post, Comment
 from django.utils import timezone
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import Postedit
+from .forms import Postedit, CommentForm
 from django.views.generic import ListView, TemplateView
 
 
@@ -32,7 +31,8 @@ def create_post(request):
 @login_required
 def detailed_post(request, post_id):
     post_detail = get_object_or_404(Post, pk=post_id)
-    return render(request, 'detailed_post.html', {'post': post_detail})
+    write_comment = Comment.objects.filter(post_id=post_id).order_by('-created_at')
+    return render(request, 'detailed_post.html', {'post': post_detail, 'comment': write_comment})
 
 @login_required
 def new_post(request):
@@ -77,4 +77,21 @@ def delete_post(request, post_id):
     post.delete()
     return redirect('/')
 
+def write_comment(request, post_id):
+    if request.method == 'POST':
+        comment = request.POST.get('comment','')
+        current_post = Post.objects.get(id=post_id)
 
+        C = Comment()
+        C.comment = comment
+        C.nickname = request.user
+        C.post = current_post
+        C.save()
+
+        return redirect('/detailed_post/'+str(post_id))
+
+@login_required
+def delete_comment(request, post_id):
+    comment = Comment.objects.get(id=post_id)
+    comment.delete()
+    return redirect('/detailed_post/'+str(post_id))

@@ -8,7 +8,7 @@ class UserModel(AbstractUser):
     class Meta:
         db_table = "user"
    
-    nickname = models.TextField(max_length=16, null=True)
+    nickname = models.TextField(max_length=16, null=True, default='')
     bio = models.CharField(max_length=500, blank=True, null=True)
     user_images = models.ImageField(null=True, upload_to="images", blank=True)
     follow = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='followee')

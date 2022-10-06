@@ -150,7 +150,7 @@
                 <div style="margin-left: 30px;">
                     <h5 class="card-title">{{ ul.nickname }}</h5>
                     <p class="card-text">
-                        팔로잉 {{ ul.follow.count }} 명팔로워 {{ ul.followee.count }} 명
+                        팔로잉 {{ ul.follow.count }} 명 <hr> 팔로워 {{ ul.followee.count }} 명
                     </p>
                     {% if ul in user.follow.all %}
                     <a href="/user/follow/{{ ul.id }}" class="card-link">[팔로우 취소]</a>
