@@ -86,7 +86,6 @@
 
 
         .now_user_name {
-            border: 1px solid red;
             float: left;
             width: 20%;
             box-sizing: border-box;
@@ -98,7 +97,6 @@
         }
 
         .comment_write {
-            border: 1px solid green;
             float: left;
             margin-left: 5%;
             margin-top: 50px;
@@ -115,12 +113,13 @@
         }
 
         .comment_box_1 {
-            margin-top: 30px;
-
+            margin-top: 550px;
+            border: 1px solid  palevioletred;;
         }
 
         .comment_box_2 {
             margin-bottom: 50px;
+            border: 1px solid  palevioletred;;
         }
 
         .post_title {
@@ -195,7 +194,7 @@
 
             <div class="btns">
                 <div class="delete_btn" href="/">
-                    <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-1">Delete</button></a>
+                    <a href="{% url 'post:delete_post' post.id %}"><button class="btn-hover color-2">Delete</button></a>
                 </div>
 
                 <div class="edit_btn" href="/">
@@ -215,6 +214,7 @@
                 <h4> 댓글 | {{ post.comment }}</h4>
                     <button class="comment_delete_btn"> 삭제 </button>
             </div>
+            
         </div>
 
 
