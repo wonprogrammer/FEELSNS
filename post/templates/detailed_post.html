@@ -53,7 +53,7 @@
             margin-top: 300px;
         }
 
-    
+
         /* ---------------------------------------------- */
 
 
@@ -80,7 +80,7 @@
             box-sizing: border-box;
         }
 
-        .comment_box_1{
+        .comment_box_1 {
             margin-bottom: 500px;
         }
 
@@ -116,62 +116,62 @@
 
         .comment_box_1 {
             margin-top: 30px;
-            
+
         }
 
         .comment_box_2 {
             margin-bottom: 50px;
         }
 
-        .post_title{
+        .post_title {
             background-color: beige;
         }
 
-        .post_comment{
+        .post_comment {
             background-color: beige;
         }
 
-        .comment_delete_btn{
+        .comment_delete_btn {
             height: 40px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             padding-bottom: 30px;
             border: 0;
             outline: 0;
         }
 
-        .comment_writer_list{
-            margin-top: 100px;
-        }
-        .comment_list{
+        .comment_writer_list {
             margin-top: 100px;
         }
 
-        .comment_write{
+        .comment_list {
+            margin-top: 100px;
+        }
+
+        .comment_write {
             margin-bottom: 100px;
             margin-top: 100px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             border: 0;
             outline: 0;
         }
-        .now_user_name{
+
+        .now_user_name {
             margin-bottom: 100px;
             margin-top: 100px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             border: 0;
             outline: 0;
             text-align: center;
         }
 
 
-        .comment_save_btn{
+        .comment_save_btn {
             height: 40px;
-            background-color: rgba( 255, 255, 255, 0.5 );
+            background-color: rgba(255, 255, 255, 0.5);
             padding-bottom: 30px;
             border: 0;
             outline: 0;
         }
-
-        
     </style>
 </head>
 
@@ -204,34 +204,50 @@
             </div>
         </div>
 
-        
-
-        <div class="comment_box_1">
-            <div class="comment_writer_list">
-                <h4> Name | {{post.username}}</h4>
-            </div>
-            
-            <div class="comment_list">
-                <!-- 변수 설정해줘야됨 -->
-                <h4> 댓글 | {{post.comment}}</h4>
-                <button class="comment_delete_btn"> 삭제 </button>
-            </div>
-
-
-        </div>
-
+        <form action="{% url 'post:write_comment' post.id %}" method="post">
+            {% csrf_token %}
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
 
         <div class="comment_box_2">
             <div class="now_user_name">
-                <h5>{{ user.nickname }}</h5>
+                <h5>{{ post.nickname }}</h5>
             </div>
 
-
             <div class="comment_write">
-                <input type="text" class="form-control" id="comment_write" placeholder="댓글을 남겨주세요">
+                <input type="text" class="form-control" id="comment_write" placeholder="댓글을 남겨주세요" name='comment'>
                 <button class="comment_save_btn" type="submit"> 게시 </button>
             </div>
         </div>
+    </form>
+
+    <form action="" method="post">
+        {% for cm in comment %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0"> {{ cm.comment }} </h5>
+                        <span> {{ cm.author }}</span>
+                        <span> - {{ cm.created_at | timesince }} 전</span>
+                    </div>
+                    {% if cm.author == user %}
+                        <div style="float: right">
+                            <a href="/tweet/comment/delete/{{ cm.id }}">
+                                <span class="badge bg-danger">삭제</span>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+
 </body>
 
 
