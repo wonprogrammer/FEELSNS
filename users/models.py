@@ -8,10 +8,7 @@ class UserModel(AbstractUser):
     class Meta:
         db_table = "user"
    
-    nickname = models.CharField(max_length=16, null=False)
-    bio = models.TextField(max_length=500, blank=True)
-    # user_images = models.ImageField(null=True, upload_to="", blank=True)
-    # follow = models.ManyToMan\login_page\yField(settings.AUTH_USER_MODEL, related_name='followee')
-        
-    def __str__(self):
-        return self.username
+    nickname = models.TextField(max_length=16, null=False)
+    bio = models.CharField(max_length=500, blank=True, null=True)
+    user_images = models.ImageField(upload_to="images", blank=True, null=True)
+    follow = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='followee')
