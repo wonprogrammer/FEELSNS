@@ -31,7 +31,7 @@ def create_post(request):
 @login_required
 def detailed_post(request, post_id):
     post_detail = get_object_or_404(Post, pk=post_id)
-    write_comment = Comment.objects.filter(id=post_id).order_by('-created_at')
+    write_comment = Comment.objects.filter(post_id=post_id).order_by('-created_at')
     return render(request, 'detailed_post.html', {'post': post_detail, 'comment': write_comment})
 
 @login_required

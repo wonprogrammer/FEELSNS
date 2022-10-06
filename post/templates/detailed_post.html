@@ -214,7 +214,7 @@
 
         <div class="comment_box_2">
             <div class="now_user_name">
-                <h5>{{ post.nickname }}</h5>
+                <h5>{{ user.nickname }}</h5>
             </div>
 
             <div class="comment_write">
@@ -224,27 +224,20 @@
         </div>
     </form>
 
-    <form action="" method="post">
-        {% for cm in comment %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="media">
-                    <div class="media-body">
-                        <h5 class="mt-0"> {{ cm.comment }} </h5>
-                        <span> {{ cm.author }}</span>
-                        <span> - {{ cm.created_at | timesince }} 전</span>
-                    </div>
-                    {% if cm.author == user %}
-                        <div style="float: right">
-                            <a href="/tweet/comment/delete/{{ cm.id }}">
-                                <span class="badge bg-danger">삭제</span>
-                            </a>
-                        </div>
-                    {% endif %}
+        <form action="{% url 'post:delete_comment' %}" method="post">
+            {% csrf_token %}
+            {% for cm in comment %}
+            <div class="comment_box_1"> 
+                <div class="comment_writer_list">         
+                    <h4> Name | {{ cm.nickname }}</h4>
+                </div>
+
+                <div class="comment_list">          
+                    <h4> 댓글 | {{ cm.comment }}</h4>               
+                        <button class="comment_delete_btn" onclick="location.href='/delete_comment'" > 삭제 </button>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
 
 
 
